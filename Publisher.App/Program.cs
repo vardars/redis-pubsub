@@ -4,7 +4,7 @@ internal class Program
 {
     private static async Task Main(string[] args)
     {
-        var connectionMultiplexer = ConnectionMultiplexer.Connect("localhost");
+        var connectionMultiplexer = ConnectionMultiplexer.Connect("redis");
 
         ISubscriber subscriber = connectionMultiplexer.GetSubscriber();
 

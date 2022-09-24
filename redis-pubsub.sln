@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publisher.App", "Publisher.App\Publisher.App.csproj", "{D6E4B919-4E84-40CC-AD7C-237C2BE8E25C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Publisher.App", "Publisher.App\Publisher.App.csproj", "{D6E4B919-4E84-40CC-AD7C-237C2BE8E25C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscriber.App", "Subscriber.App\Subscriber.App.csproj", "{FCBBAEC1-16BF-4AC5-96DC-A0EDA33B6AE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Subscriber.App", "Subscriber.App\Subscriber.App.csproj", "{FCBBAEC1-16BF-4AC5-96DC-A0EDA33B6AE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose", "docker-compose", "{75B43F2E-EF70-49A2-94CD-A4BF22F57093}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

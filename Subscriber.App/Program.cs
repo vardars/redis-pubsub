@@ -1,20 +1,17 @@
-﻿using StackExchange.Redis;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Subscriber.App;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        var connectionMultiplexer = ConnectionMultiplexer.Connect("localhost");
-
-        var subscriber = connectionMultiplexer.GetSubscriber();
-
-        var channel = new RedisChannel("pubsub", RedisChannel.PatternMode.Auto);
-
-        subscriber.Subscribe(channel, (channel, message) =>
-        {
-            Console.WriteLine(message);
-        });
-
-        Console.ReadLine();
+        CreateHostBuilder(args).Build().Run();
     }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureServices((hostContext, services) => { 
+                services.AddHostedService<Worker>(); 
+            });
 }
